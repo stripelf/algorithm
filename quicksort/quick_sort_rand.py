@@ -1,3 +1,4 @@
+import random
 def quick_sort(array,p,q):
     if p<q:
         r = partition(array,p,q)
@@ -5,6 +6,8 @@ def quick_sort(array,p,q):
         quick_sort(array,r+1,q)
 
 def partition(array,p,q):
+    r=random.randint(p,q)
+    array[p],array[r]=array[r],array[p]
     key=array[p]
     i=p
     for j in range(p+1,q+1):
